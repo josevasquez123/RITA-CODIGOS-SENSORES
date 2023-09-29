@@ -1,0 +1,6 @@
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:1862:26:LL_USART_IsActiveFlag_TXE	1
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h:2474:22:LL_USART_TransmitData8	1
+../Core/Src/M8N.c:35:6:M8N_TransmitData	3
+../Core/Src/M8N.c:43:6:M8N_Initialization	1
+../Core/Src/M8N.c:54:15:M8N_UBX_CHKSUM_Check	4
+../Core/Src/M8N.c:67:6:M8N_UBX_NAV_POSLLH_Parsing	1
