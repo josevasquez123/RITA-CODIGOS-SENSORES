@@ -1,50 +1,198 @@
-23:47:17 **** Incremental Build of configuration Debug for project NEO_8M ****
+17:46:11 **** Incremental Build of configuration Debug for project BNO_085 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fcommon -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:116:27: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  116 |                           printf("LAT: %ld\tLON: %ld\tHeight: %ld\n", posllh.lat, posllh.lon);
-      |                           ^~~~~~
-../Core/Src/main.c:25:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   24 | #include "M8N.h"
+arm-none-eabi-gcc "../Core/Src/BNO080.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BNO080.d" -MT"Core/Src/BNO080.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/BNO080.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/BNO080.c: In function 'BNO080_Initialization':
+../Core/Src/BNO080.c:83:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   83 |         printf("Checking BNO080...");
+      |         ^~~~~~
+../Core/Src/BNO080.c:48:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   47 | #include <math.h>
   +++ |+#include <stdio.h>
-   25 | /* USER CODE END Includes */
-../Core/Src/main.c:116:27: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  116 |                           printf("LAT: %ld\tLON: %ld\tHeight: %ld\n", posllh.lat, posllh.lon);
-      |                           ^~~~~~
-../Core/Src/main.c:116:27: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:116:42: warning: format '%ld' expects argument of type 'long int', but argument 2 has type 'int' [-Wformat=]
-  116 |                           printf("LAT: %ld\tLON: %ld\tHeight: %ld\n", posllh.lat, posllh.lon);
-      |                                        ~~^                            ~~~~~~~~~~
-      |                                          |                                  |
-      |                                          long int                           int
-      |                                        %d
-../Core/Src/main.c:116:52: warning: format '%ld' expects argument of type 'long int', but argument 3 has type 'int' [-Wformat=]
-  116 |                           printf("LAT: %ld\tLON: %ld\tHeight: %ld\n", posllh.lat, posllh.lon);
-      |                                                  ~~^                              ~~~~~~~~~~
-      |                                                    |                                    |
-      |                                                    long int                             int
-      |                                                  %d
-../Core/Src/main.c:116:65: warning: format '%ld' expects a matching 'long int' argument [-Wformat=]
-  116 |                           printf("LAT: %ld\tLON: %ld\tHeight: %ld\n", posllh.lat, posllh.lon);
-      |                                                               ~~^
-      |                                                                 |
-      |                                                                 long int
-arm-none-eabi-gcc -o "NEO_8M.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\RITA\Codigos\Tests\V2\ST\NEO_8M\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NEO_8M.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: NEO_8M.elf
+   48 | 
+../Core/Src/BNO080.c:83:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   83 |         printf("Checking BNO080...");
+      |         ^~~~~~
+../Core/Src/BNO080.c:83:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/BNO080.c: In function 'BNO080_readFRSdata':
+../Core/Src/BNO080.c:625:25: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  625 |                         printf("metaData array over run. Returning.");
+      |                         ^~~~~~
+../Core/Src/BNO080.c:625:25: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/BNO080.c: In function 'BNO080_waitForSPI':
+../Core/Src/BNO080.c:924:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  924 |         printf("\nData not available\n");
+      |         ^~~~~~
+../Core/Src/BNO080.c:924:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:19: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  118 |                   printf("%d,%d,%d", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   25 | #include "Quaternion.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:118:19: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  118 |                   printf("%d,%d,%d", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:118:19: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:73:15: warning: variable 'quatRadianAccuracy' set but not used [-Wunused-but-set-variable]
+   73 |         float quatRadianAccuracy;
+      |               ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "BNO_085.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\RITA\Codigos\Tests\V2\ST\BNO_085\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BNO_085.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BNO_085.elf
  
-arm-none-eabi-size   NEO_8M.elf 
-arm-none-eabi-objdump -h -S  NEO_8M.elf  > "NEO_8M.list"
+arm-none-eabi-size   BNO_085.elf 
+arm-none-eabi-objdump -h -S  BNO_085.elf  > "BNO_085.list"
    text	   data	    bss	    dec	    hex	filename
-  13052	    112	   2064	  15228	   3b7c	NEO_8M.elf
+  30232	    488	   2192	  32912	   8090	BNO_085.elf
 Finished building: default.size.stdout
  
-Finished building: NEO_8M.list
+Finished building: BNO_085.list
  
-23:54:27 **** Incremental Build of configuration Debug for project NEO_8M ****
+17:48:04 **** Incremental Build of configuration Debug for project BNO_085 ****
 make -j8 all 
-arm-none-eabi-size   NEO_8M.elf 
+arm-none-eabi-size   BNO_085.elf 
    text	   data	    bss	    dec	    hex	filename
-  13052	    112	   2064	  15228	   3b7c	NEO_8M.elf
+  30232	    488	   2192	  32912	   8090	BNO_085.elf
 Finished building: default.size.stdout
+ 
+17:52:17 **** Incremental Build of configuration Debug for project BNO_085 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/BNO080.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BNO080.d" -MT"Core/Src/BNO080.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/BNO080.o"
+arm-none-eabi-gcc "../Core/Src/Quaternion.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Quaternion.d" -MT"Core/Src/Quaternion.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/Quaternion.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/BNO080.c: In function 'BNO080_Initialization':
+../Core/Src/BNO080.c:83:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   83 |         printf("Checking BNO080...");
+      |         ^~~~~~
+../Core/Src/BNO080.c:48:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   47 | #include <math.h>
+  +++ |+#include <stdio.h>
+   48 | 
+../Core/Src/BNO080.c:83:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   83 |         printf("Checking BNO080...");
+      |         ^~~~~~
+../Core/Src/BNO080.c:83:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:19: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  118 |                   printf("%d,%d,%d", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   25 | #include "Quaternion.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:118:19: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  118 |                   printf("%d,%d,%d", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:118:19: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/BNO080.c: In function 'BNO080_readFRSdata':
+../Core/Src/main.c:73:15: warning: variable 'quatRadianAccuracy' set but not used [-Wunused-but-set-variable]
+   73 |         float quatRadianAccuracy;
+      |               ^~~~~~~~~~~~~~~~~~
+../Core/Src/BNO080.c:625:25: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  625 |                         printf("metaData array over run. Returning.");
+      |                         ^~~~~~
+../Core/Src/BNO080.c:625:25: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/BNO080.c: In function 'BNO080_waitForSPI':
+../Core/Src/BNO080.c:924:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  924 |         printf("\nData not available\n");
+      |         ^~~~~~
+../Core/Src/BNO080.c:924:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "BNO_085.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\RITA\Codigos\Tests\V2\ST\BNO_085\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BNO_085.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BNO_085.elf
+ 
+arm-none-eabi-size   BNO_085.elf 
+arm-none-eabi-objdump -h -S  BNO_085.elf  > "BNO_085.list"
+   text	   data	    bss	    dec	    hex	filename
+  30256	    488	   2192	  32936	   80a8	BNO_085.elf
+Finished building: default.size.stdout
+ 
+Finished building: BNO_085.list
+ 
+18:00:21 **** Incremental Build of configuration Debug for project BNO_085 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/BNO080.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BNO080.d" -MT"Core/Src/BNO080.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/BNO080.o"
+arm-none-eabi-gcc "../Core/Src/Quaternion.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/Quaternion.d" -MT"Core/Src/Quaternion.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/Quaternion.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:19: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  118 |                   printf("%d,%d,%d", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   25 | #include "Quaternion.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:118:19: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  118 |                   printf("%d,%d,%d", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:118:19: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/BNO080.c: In function 'BNO080_Initialization':
+../Core/Src/main.c:73:15: warning: variable 'quatRadianAccuracy' set but not used [-Wunused-but-set-variable]
+   73 |         float quatRadianAccuracy;
+      |               ^~~~~~~~~~~~~~~~~~
+../Core/Src/BNO080.c:88:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   88 |         printf("Checking BNO080...");
+      |         ^~~~~~
+../Core/Src/BNO080.c:48:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   47 | #include <math.h>
+  +++ |+#include <stdio.h>
+   48 | 
+../Core/Src/BNO080.c:88:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   88 |         printf("Checking BNO080...");
+      |         ^~~~~~
+../Core/Src/BNO080.c:88:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/BNO080.c: In function 'BNO080_readFRSdata':
+../Core/Src/BNO080.c:630:25: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  630 |                         printf("metaData array over run. Returning.");
+      |                         ^~~~~~
+../Core/Src/BNO080.c:630:25: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/BNO080.c: In function 'BNO080_waitForSPI':
+../Core/Src/BNO080.c:929:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  929 |         printf("\nData not available\n");
+      |         ^~~~~~
+../Core/Src/BNO080.c:929:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "BNO_085.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\RITA\Codigos\Tests\V2\ST\BNO_085\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BNO_085.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BNO_085.elf
+ 
+arm-none-eabi-size   BNO_085.elf 
+arm-none-eabi-objdump -h -S  BNO_085.elf  > "BNO_085.list"
+   text	   data	    bss	    dec	    hex	filename
+  30320	    488	   2192	  33000	   80e8	BNO_085.elf
+Finished building: default.size.stdout
+ 
+Finished building: BNO_085.list
+ 
+15:17:17 **** Incremental Build of configuration Debug for project BNO_085 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:19: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  118 |                   printf("%d,%d,%d\n", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   25 | #include "Quaternion.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:118:19: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  118 |                   printf("%d,%d,%d\n", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:118:19: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:73:15: warning: variable 'quatRadianAccuracy' set but not used [-Wunused-but-set-variable]
+   73 |         float quatRadianAccuracy;
+      |               ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "BNO_085.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\RITA\Codigos\Tests\V2\ST\BNO_085\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BNO_085.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BNO_085.elf
+ 
+arm-none-eabi-size   BNO_085.elf 
+arm-none-eabi-objdump -h -S  BNO_085.elf  > "BNO_085.list"
+   text	   data	    bss	    dec	    hex	filename
+  30320	    488	   2192	  33000	   80e8	BNO_085.elf
+Finished building: default.size.stdout
+ 
+Finished building: BNO_085.list
  

@@ -1,0 +1,32 @@
+15:17:17 **** Incremental Build of configuration Debug for project BNO_085 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_FULL_LL_DRIVER -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:19: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  118 |                   printf("%d,%d,%d\n", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   25 | #include "Quaternion.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c:118:19: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  118 |                   printf("%d,%d,%d\n", (int)(BNO080_Roll*100), (int)(BNO080_Pitch*100), (int)(BNO080_Yaw*100)); //print roll, pitch, yaw in degree
+      |                   ^~~~~~
+../Core/Src/main.c:118:19: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:73:15: warning: variable 'quatRadianAccuracy' set but not used [-Wunused-but-set-variable]
+   73 |         float quatRadianAccuracy;
+      |               ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "BNO_085.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\RITA\Codigos\Tests\V2\ST\BNO_085\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BNO_085.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BNO_085.elf
+ 
+arm-none-eabi-size   BNO_085.elf 
+arm-none-eabi-objdump -h -S  BNO_085.elf  > "BNO_085.list"
+   text	   data	    bss	    dec	    hex	filename
+  30320	    488	   2192	  33000	   80e8	BNO_085.elf
+Finished building: default.size.stdout
+ 
+Finished building: BNO_085.list
+ 
+
+15:17:22 Build Finished. 0 errors, 3 warnings. (took 4s.830ms)
+
